@@ -43,7 +43,7 @@ function askLength() {
 
     if (length > 7 && length < 129 ) {
 
-      // askUpper();
+      askUpper();
       return (length);
 
     } else {
@@ -54,6 +54,18 @@ function askLength() {
 /// askLength has been tested and confirmed
 console.log(askLength());
 
+function askUpper() {
+    var askUpCase = confirm("Will your password require Upper Case letters?");
+
+    if (askUpCase == true) {
+      return (true);
+      // askLower();
+    } else {
+      return (false);
+      //askLower();
+    }
+}
+console.log(askUpper());
 ////////////////////////////////////////////////////////////
 //  Gloria Varela's Generator code functions (Step 1)
 ///////////////////////////////////////////////////////////
