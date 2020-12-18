@@ -1,4 +1,6 @@
-// Assignment Code
+/////////////////////////////////////////////////////////////////
+// Provided Assignment Code
+/////////////////////////////////////////////////////////////////
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -14,7 +16,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //////////////////////////////////////////////////////////
-// SudoCode Below (The Game Plan)
+// Gloria Varela's SudoCode Below (The Game Plan)
 //////////////////////////////////////////////////////////
 // 1. Create functions that generate a random Number, Symbol, lowerCase, and upperCase from charset
 // 2. How to get results of fuctions that create the random things
@@ -34,7 +36,26 @@ generateBtn.addEventListener("click", writePassword);
 // 5. done... super easy
 
 ////////////////////////////////////////////////////////////
-// Generator code functions
+//  Gloria Varela's Generator code functions (Step 3)
+///////////////////////////////////////////////////////////
+function askLength() {
+    var length = prompt("How many characters long does your password have to be?", " ");
+
+    if (length > 7 && length < 129 ) {
+
+      // askUpper();
+      return (length);
+
+    } else {
+      alert("Please choose a numerical password length that is not less tha 8 or greater than 128 characters.");
+      askLength();
+    }
+}
+/// askLength has been tested and confirmed
+console.log(askLength());
+
+////////////////////////////////////////////////////////////
+//  Gloria Varela's Generator code functions (Step 1)
 ///////////////////////////////////////////////////////////
 
 //// my own fucntion. Pulling from the ASCII Character Set
@@ -70,8 +91,11 @@ function randomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-// console.log the retun value from function random...
-console.log(randomLower());
-console.log(randomUpper());
-console.log(randomNumber());
-console.log(randomSymbol());
+////////////////////////////////////////////////////////////
+//  Gloria Varela's Generator code functions (Step 2)
+///////////////////////////////////////////////////////////
+// console.log the retun value from function random...()
+// console.log(randomLower());
+// console.log(randomUpper());
+// console.log(randomNumber());
+// console.log(randomSymbol());
