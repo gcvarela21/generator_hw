@@ -47,6 +47,20 @@ function randomLower() {
 // * 26 to get something from 0-25. corresponds with amount of letters to the alphabet when counting from zero
 // + 97 because lower case alpha starts at 97 in the char set code
 /// console log example of a value of 97+ that relates to the char set code
-console.log(Math.floor(Math.random() * 26) + 97);
+// console.log(Math.floor(Math.random() * 26) + 97);
 //console.log the retun value from function randomLower();
+// console.log(randomLower());
+
+function randomUpper() {
+  // Same as above but the upper case alphabet starts at Char Code 65
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+
+
+
+// console.log the retun value from function random...
 console.log(randomLower());
+console.log(randomUpper());
+// console.log(randomNumber());
+// console.log(randomSymbol());
