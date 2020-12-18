@@ -62,10 +62,16 @@ function randomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
-
+function randomSymbol() {
+  // using const as a replacement for var or let because it's value does not change
+  // symbols is equal to an array of symbols inside the single quotes
+  // symbols[]; returns the character value that corresponds with the generated numbers position
+  const symbols = '!@#$%^&*_+=-(){}[]<>';
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
 
 // console.log the retun value from function random...
 console.log(randomLower());
 console.log(randomUpper());
 console.log(randomNumber());
-// console.log(randomSymbol());
+console.log(randomSymbol());
