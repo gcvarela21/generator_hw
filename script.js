@@ -56,11 +56,16 @@ function randomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 
+function randomNumber() {
+  // Same as randomLower and randomUpper but the there are only 10 characters from 0-9
+  // numbers start at Char Code 48
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
 
 
 
 // console.log the retun value from function random...
 console.log(randomLower());
 console.log(randomUpper());
-// console.log(randomNumber());
+console.log(randomNumber());
 // console.log(randomSymbol());
