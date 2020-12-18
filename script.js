@@ -13,7 +13,7 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", askLength);
 
 //////////////////////////////////////////////////////////
 // Gloria Varela's SudoCode Below (The Game Plan)
@@ -39,33 +39,85 @@ generateBtn.addEventListener("click", writePassword);
 //  Gloria Varela's Generator code functions (Step 3)
 ///////////////////////////////////////////////////////////
 function askLength() {
-    var length = prompt("How many characters long does your password have to be?", " ");
+  var length = prompt("How many characters long does your password have to be?", " ");
 
-    if (length > 7 && length < 129 ) {
+  if (length > 7 && length < 129) {
 
-      askUpper();
-      return (length);
+    askUpper();
+    return (length);
 
-    } else {
-      alert("Please choose a numerical password length that is not less tha 8 or greater than 128 characters.");
-      askLength();
-    }
+  } else {
+    alert("Please choose a numerical password length that is not less tha 8 or greater than 128 characters.");
+    askLength();
+  }
 }
 /// askLength has been tested and confirmed
-console.log(askLength());
-
+// console.log(askLength());
+///////////////////////////////////////////////////////////////////////////////
 function askUpper() {
-    var askUpCase = confirm("Will your password require Upper Case letters?");
+  var askUpCase = confirm("Will your password require Upper Case Letters?");
 
-    if (askUpCase == true) {
-      return (true);
-      // askLower();
-    } else {
-      return (false);
-      //askLower();
-    }
+  if (askUpCase == true) {
+    askLower();
+    return (true);
+
+  } else {
+    askLower();
+    return (false);
+
+  }
 }
-console.log(askUpper());
+//// askUpper(); has been tested and confirmed
+// console.log(askUpper());
+/////////////////////////////////////////////////////////////////
+function askLower() {
+  var askLowCase = confirm("Will your password require lower case letters?");
+
+  if (askLowCase == true) {
+    askNumber();
+    return (true);
+  } else {
+    askNumber();
+    return (false);
+  }
+
+}
+/// askLower(); has been tested.. its awesome
+//console.log(askLower());
+/////////////////////////////////////////////////////////////////////
+function askNumber() {
+  var askNum = confirm("Will your password require any numbers?");
+
+  if (askNum == true) {
+    askSymbol();
+    return (true);
+  } else {
+    askSymbol();
+    return (false);
+  }
+}
+// console.log(askNumber());
+//////////////////////////////////////////////////////
+function askSymbol() {
+  var askSym = confirm("Will your password need and symbols or special characters?");
+
+  if (askSym == true) {
+    checkCharacters();
+    return (true);
+  } else {
+    checkCharacters();
+    return (false);
+  }
+}
+// console.log(askSymbol());
+//////////////////////////////////////////////////
+function checkCharacters() {
+  alert("im a gunna check them chars out");
+}
+
+
+
+
 ////////////////////////////////////////////////////////////
 //  Gloria Varela's Generator code functions (Step 1)
 ///////////////////////////////////////////////////////////
