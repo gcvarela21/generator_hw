@@ -3,6 +3,7 @@
 /////////////////////////////////////////////////////////////////
 var generateBtn = document.querySelector("#generate");
 var charResults = [];
+var saveLength = [];
 
 // Write password to the #password input
 function writePassword() {
@@ -40,11 +41,12 @@ generateBtn.addEventListener("click", askLength);
 //  Gloria Varela's Generator code functions (Step 3)
 ///////////////////////////////////////////////////////////
 function askLength() {
+  saveLength.pop();
   var length = prompt("How many characters long does your password have to be?", " ");
-
+  saveLength.push(length);
   if (length > 7 && length < 129) {
     askUpper();
-    return (length);
+
   } else {
       alert("Please choose a numerical password length that is not less tha 8 or greater than 128 characters.");
       askLength();
@@ -58,6 +60,7 @@ function askUpper() {
   charResults.pop();
   charResults.pop();
   charResults.pop();
+
   var askUpCase = confirm("Will your password require Upper Case Letters?");
 
   if (askUpCase == true) {
@@ -126,12 +129,10 @@ function askSymbol() {
 //////////////////////////////////////////////////
 //// Step 3.1 check for dersired character types
 ///////////////////////////////////////////////////
-
-
-
 function checkCharacters() {
   alert("Double checking you Character Selections.");
   console.log(charResults);
+  console.log(saveLength[0]);
   if (charResults[0] == "false" && charResults[1] == "false" && charResults[2] == "false" && charResults[3] == "false") {
       alert("Please choose ('click' OK) for at least one character type.");
       askUpper();
@@ -139,13 +140,6 @@ function checkCharacters() {
       alert("Looks good. Let's do this!");
   }
 }
-
-////////////// conditional staement
-// crea
-
-
-
-
 
 ////////////////////////////////////////////////////////////
 //  Gloria Varela's Generator code functions (Step 1)
