@@ -1,2 +1,2 @@
 # password_generator
-Create a new and secure pass word with the click of a button.
+Create a new and secure password with the click of a button.

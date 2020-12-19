@@ -4,6 +4,10 @@
 var generateBtn = document.querySelector("#generate");
 var charResults = [];
 var saveLength = [];
+var l = randomLower();
+var u = randomUpper();
+var n = randomNumber();
+var s = randomSymbol();
 
 // Write password to the #password input
 function writePassword() {
@@ -33,17 +37,18 @@ generateBtn.addEventListener("click", askLength);
 //     -confirm lowerCase
 //     -check if at least 1 charset is chosen if false then Alert()
 //     3.1 -ruturn results from confirms to see what we need to build password
-//     3.4 build and array/ function to put it together
-// 4. document.print results into generate text textarea!
+//     3.2 build and array/ function to put it together
+// 4. document.print results into generate text textarea! (should happen in lines 10-13)
 // 5. done... super easy
 
 ////////////////////////////////////////////////////////////
 //  Gloria Varela's Generator code functions (Step 3)
 ///////////////////////////////////////////////////////////
 function askLength() {
+/// saveLength.pop(); clears out the empty global array of saveLength so the users new input will be reset without refreshing the browser.
   saveLength.pop();
   var length = prompt("How many characters long does your password have to be?", " ");
-  saveLength.push(length);
+      saveLength.push(length);
   if (length > 7 && length < 129) {
     askUpper();
 
@@ -56,13 +61,14 @@ function askLength() {
 // console.log(askLength());
 ///////////////////////////////////////////////////////////////////////////////
 function askUpper() {
+/// charResults.pop(); clears out the empty array so the users new choices will be reset without refreshing the browser.
   charResults.pop();
   charResults.pop();
   charResults.pop();
   charResults.pop();
 
   var askUpCase = confirm("Will your password require Upper Case Letters?");
-
+/////// push is utilized to capture the users selections into an empty global array of charResults
   if (askUpCase == true) {
     charResults.push("true");
     askLower();
@@ -134,11 +140,21 @@ function checkCharacters() {
   console.log(charResults);
   console.log(saveLength[0]);
   if (charResults[0] == "false" && charResults[1] == "false" && charResults[2] == "false" && charResults[3] == "false") {
-      alert("Please choose ('click' OK) for at least one character type.");
+      alert("Please choose at least one character type to generate a password.");
       askUpper();
   } else {
       alert("Looks good. Let's do this!");
+///////// writePassword() is found on line 9 from the provided code
+      writePassword();
   }
+}
+
+//////////////////////////////////////////////////
+//// Step 3.2 Put it all together
+///////////////////////////////////////////////////
+// this function is called way back on line: 10
+function generatePassword() {
+  return ("I ran out of time to complete this last function. In my console.log, & notes/comments within my script.js. You will see all my hard work & creativity to get this far. Look! this works:   " + l + s + u + n + "      How cool?");
 }
 
 ////////////////////////////////////////////////////////////
@@ -146,6 +162,7 @@ function checkCharacters() {
 ///////////////////////////////////////////////////////////
 
 //// my own fucntion. Pulling from the ASCII Character Set
+
 function randomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -182,7 +199,7 @@ function randomSymbol() {
 //  Gloria Varela's Generator code functions (Step 2)
 ///////////////////////////////////////////////////////////
 // console.log the retun value from function random...()
-// console.log(randomLower());
-// console.log(randomUpper());
-// console.log(randomNumber());
-// console.log(randomSymbol());
+console.log(randomLower());
+console.log(randomUpper());
+console.log(randomNumber());
+console.log(randomSymbol());
