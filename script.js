@@ -2,6 +2,7 @@
 // Provided Assignment Code
 /////////////////////////////////////////////////////////////////
 var generateBtn = document.querySelector("#generate");
+var charResults = [];
 
 // Write password to the #password input
 function writePassword() {
@@ -42,28 +43,34 @@ function askLength() {
   var length = prompt("How many characters long does your password have to be?", " ");
 
   if (length > 7 && length < 129) {
-
     askUpper();
     return (length);
-
   } else {
-    alert("Please choose a numerical password length that is not less tha 8 or greater than 128 characters.");
-    askLength();
+      alert("Please choose a numerical password length that is not less tha 8 or greater than 128 characters.");
+      askLength();
   }
 }
 /// askLength has been tested and confirmed
 // console.log(askLength());
 ///////////////////////////////////////////////////////////////////////////////
 function askUpper() {
+  charResults.pop();
+  charResults.pop();
+  charResults.pop();
+  charResults.pop();
   var askUpCase = confirm("Will your password require Upper Case Letters?");
 
   if (askUpCase == true) {
+    charResults.push("true");
     askLower();
-    return (true);
+
+    // return (true);
 
   } else {
+    charResults.push("false");
     askLower();
-    return (false);
+
+    // return (false);
 
   }
 }
@@ -74,11 +81,13 @@ function askLower() {
   var askLowCase = confirm("Will your password require lower case letters?");
 
   if (askLowCase == true) {
+    charResults.push("true");
     askNumber();
-    return (true);
+    // return (true);
   } else {
+    charResults.push("false");
     askNumber();
-    return (false);
+        // return (false);
   }
 
 }
@@ -89,11 +98,13 @@ function askNumber() {
   var askNum = confirm("Will your password require any numbers?");
 
   if (askNum == true) {
+    charResults.push("true");
     askSymbol();
-    return (true);
+    // return (true);
   } else {
+    charResults.push("false");
     askSymbol();
-    return (false);
+    // return (false);
   }
 }
 // console.log(askNumber());
@@ -102,18 +113,36 @@ function askSymbol() {
   var askSym = confirm("Will your password need and symbols or special characters?");
 
   if (askSym == true) {
+    charResults.push("true");
     checkCharacters();
-    return (true);
+        // return (true);
   } else {
+    charResults.push("false");
     checkCharacters();
-    return (false);
+        // return (false);
   }
 }
 // console.log(askSymbol());
 //////////////////////////////////////////////////
+//// Step 3.1 check for dersired character types
+///////////////////////////////////////////////////
+
+
+
 function checkCharacters() {
-  alert("im a gunna check them chars out");
+  alert("Double checking you Character Selections.");
+  console.log(charResults);
+  if (charResults[0] == "false" && charResults[1] == "false" && charResults[2] == "false" && charResults[3] == "false") {
+      alert("Please choose ('click' OK) for at least one character type.");
+      askUpper();
+  } else {
+      alert("Looks good. Let's do this!");
+  }
 }
+
+////////////// conditional staement
+// crea
+
 
 
 
