@@ -8,18 +8,18 @@ Requirements:
 
 Here is a visual:
 
-![Sample Page](https://gcvarela21.github.io/password_generator/varela.png)
+![Sample Page](https://github.com/gcvarela21/generator_hw/blob/main/varela.png?raw=true)
 
-* [This is Live Site on Git Hub until 12/22/20](https://gcvarela21.github.io/varela_portfolio/)
+* [This is Live Site on Git Hub until 01/19/21](https://gcvarela21.github.io/generator_hw/)
 * [See all my repositories HERE](https://github.com/gcvarela21/)
-* [If your reading this you are probably HERE](https://github.com/gcvarela21/password_generator/)
+* [If your reading this you are probably HERE](https://github.com/gcvarela21/generator_hw/)
 ​
 
 ## **Built With**
 
 * [HTML](https"//w3schools.com)
-* [CSS](https"//w3schools.com)
-* [JavaScript](https://getbootstrap.com/)
+* [CSS](https://getbootstrap.com/)
+* [JavaScript](https://www.w3schools.com/js/DEFAULT.asp)
 * [gitBash](https://git-scm.com/downloads)
 * [gitHub](https"//gitHub.com)
 * [Atom](https://atom.io/)
